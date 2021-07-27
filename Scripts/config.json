@@ -1,0 +1,10 @@
+{
+    "jointArm1" : "redundantRob_joint1",
+    "jointArm2" : "redundantRob_joint2",
+    "jointArm3" : "redundantRob_joint3",
+    "jointArm4" : "redundantRob_joint4",
+    "jointArm5" : "redundantRob_joint5",
+    "jointArm6" : "redundantRob_joint6",
+    "link5Arm"  : "redundantRob_link5",
+    "endArm"    : "Rectangle4"
+}
