@@ -37,6 +37,35 @@ def Main():
 
         time.sleep(1)
 
+        ## Orientation of Joint
+        orientation = joint6.GetJointAbsoluteOrientation()
+        print(
+        """
+        // ============ Orientation  ============ // \n 
+        [ 
+            Name of joint: {} \n
+            alpha: {}  \n
+            beta: {}  \n
+            gamma : {}  \n 
+        ]
+        """
+        .format(joint6.name, orientation[0], orientation[1], orientation[2])
+        )
+
+        position = joint6.GetJointAbsolutePosition()
+        print(
+        """
+        // ============ Position  ============ // \n 
+        [ 
+            Name of joint: {} \n
+            x: {}  \n
+            y: {}  \n
+            x : {}  \n 
+        ]
+        """
+        .format(joint6.name, position[0], position[1], position[2])
+        )
+
     comm.Dispose()
 
 Main()

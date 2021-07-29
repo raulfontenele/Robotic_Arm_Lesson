@@ -14,3 +14,14 @@ class Joint:
     def SetJointPosition(self, position):
         sim.simxSetJointTargetPosition(self.comm.clientId, self.handle, math.radians(position), sim.simx_opmode_oneshot)
     
+    def SetJointVelocity(self, velocity):
+        sim.simxSetJointTargetVelocity(self.comm.clientId, self.handle, velocity, sim.simx_opmode_oneshot)
+        
+    def GetJointAbsoluteOrientation(self):
+        returnCode,eulerAngles = sim.simxGetObjectOrientation(self.comm.clientId,self.handle,-1,sim.simx_opmode_oneshot_wait)
+        return eulerAngles
+
+    def GetJointAbsolutePosition(self):
+        eturnCode,position = sim.simxGetObjectPosition(self.comm.clientId, self.handle, -1, sim.simx_opmode_oneshot_wait )
+        return position
+    
