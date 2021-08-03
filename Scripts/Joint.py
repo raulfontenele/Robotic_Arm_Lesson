@@ -24,4 +24,8 @@ class Joint:
     def GetJointAbsolutePosition(self):
         eturnCode,position = sim.simxGetObjectPosition(self.comm.clientId, self.handle, -1, sim.simx_opmode_oneshot_wait )
         return position
+
+    def GetJointPosition(self):
+        returnCode, position = sim.simxGetJointPosition(self.comm.clientId, self.handle, sim.simx_opmode_oneshot_wait)
+        return position
     

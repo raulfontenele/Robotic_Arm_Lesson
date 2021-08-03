@@ -6,12 +6,14 @@ class Sensor:
         self.name = name
         self.comm = communication
         self.handle = self.GetHandleObject()
-        
+          
     def GetHandleObject(self):
         returnCode,joint = sim.simxGetObjectHandle(self.comm.clientId, self.name, sim.simx_opmode_blocking)
         return joint
 
     def GetDistance(self):
         returnCode, detectionState, detectedPoint, detectedObjectHandle, detectedSurfaceNormalVector = sim.simxReadProximitySensor(
-            self.comm.clientId, self.handle, sim.simx_opmode_streaming)
-        return detectedSurfaceNormalVector
+            self.comm.clientId, self.handle, sim.simx_opmode_blocking)
+        return detectedPoint
+
+    
